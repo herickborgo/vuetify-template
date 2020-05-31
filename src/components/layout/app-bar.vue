@@ -1,15 +1,17 @@
 <template>
-  <v-app-bar
-    app
-    color="primary"
-    dark
-  >
-    <v-app-bar-nav-icon @click="updateDrawer()"></v-app-bar-nav-icon>
+  <div class="app-bar">
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <v-app-bar-nav-icon @click="updateDrawer()"></v-app-bar-nav-icon>
 
-    <div class="d-flex align-center">
-      <span class="mr-2 headline">{{ title }}</span>
-    </div>
-  </v-app-bar>
+      <div class="d-flex align-center">
+        <span class="mr-2 headline">{{ title }}</span>
+      </div>
+    </v-app-bar>
+  </div>
 </template>
 
 <script>

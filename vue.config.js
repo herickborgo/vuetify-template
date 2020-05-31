@@ -7,7 +7,7 @@ module.exports = {
       '^/api': {
         target: 'url_api',
         changeOrigin: true,
-      }
-    }
-  }
+      },
+    },
+  },
 };

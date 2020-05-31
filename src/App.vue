@@ -1,51 +1,27 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+    <app-bar @update:drawer="drawer = !drawer"></app-bar>
+    <left-bar v-model="drawer"></left-bar>
     <v-content>
-      <HelloWorld/>
+      <router-view />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import AppBar from '@/components/layout/app-bar.vue';
+import LeftBar from '@/components/layout/left-bar.vue';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    AppBar,
+    LeftBar,
   },
 
   data: () => ({
-    //
+    drawer: false,
   }),
 };
 </script>

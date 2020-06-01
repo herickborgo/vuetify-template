@@ -23,3 +23,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Lock Files
+# *-lock.json
+# *.lock

@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+/coverage
 
 /tests/e2e/videos/
 /tests/e2e/screenshots/
@@ -25,5 +26,5 @@ pnpm-debug.log*
 *.sw?
 
 # Lock Files
-# *-lock.json
-# *.lock
+*-lock.json
+*.lock

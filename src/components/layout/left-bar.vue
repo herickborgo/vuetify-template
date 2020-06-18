@@ -7,21 +7,7 @@
       :mini-variant="!drawer"
       app
     >
-      <v-list>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+      <menu-list class="mt-2" :routes="routes"></menu-list>
 
       <template v-slot:append>
         <v-list>
@@ -41,6 +27,8 @@
 </template>
 
 <script>
+import MenuList from '@/components/layout/left-bar/menu-list.vue';
+
 export default {
   name: 'LeftBar',
 
@@ -51,17 +39,27 @@ export default {
     },
   },
 
-  data: () => ({
-    items: [
-      { title: 'Dashboard', icon: 'dashboard' },
-      { title: 'Account', icon: 'account_box' },
-      { title: 'Admin', icon: 'gavel' },
-    ],
-  }),
+  components: { MenuList },
 
   computed: {
     drawer() {
       return this.value;
+    },
+    routes() {
+      return this.getRoutes(this.$router.options.routes);
+    },
+  },
+
+  methods: {
+    getRoutes(routes) {
+      return routes.filter((route) => route.meta && route.meta.leftBar).map((route) => {
+        const { leftBar } = route.meta;
+        leftBar.name = route.name;
+        if (route.children) {
+          leftBar.children = this.getRoutes(route.children);
+        }
+        return leftBar;
+      });
     },
   },
 };

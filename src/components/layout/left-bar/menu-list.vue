@@ -7,15 +7,19 @@
       >
         <v-list-group
           v-if="route.children"
-          :prepend-icon="route.icon"
           active-class="secondary"
+          class="pt-1"
         >
-          <template v-slot:activator>
+          <template v-slot:activator class="pa-0 ma-0">
+            <v-list-item-icon>
+              <v-icon>{{ route.icon }}</v-icon>
+            </v-list-item-icon>
             <v-list-item-title>{{ route.title }}</v-list-item-title>
           </template>
-          <menu-list ml-2 :routes="route.children"></menu-list>
+          <menu-list :routes="route.children"></menu-list>
         </v-list-group>
         <v-list-item
+          class="mt-1"
           v-if="!route.children"
           link
           :to="{ name: route.name }"

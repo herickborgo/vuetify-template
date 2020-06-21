@@ -7,7 +7,7 @@
       :mini-variant="!drawer"
       app
     >
-      <menu-list class="mt-2" :routes="routes"></menu-list>
+      <menu-list :routes="routes"></menu-list>
 
       <template v-slot:append>
         <v-list>

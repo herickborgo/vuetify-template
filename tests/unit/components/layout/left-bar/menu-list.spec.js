@@ -1,4 +1,4 @@
-import '@test/index.js';
+import '@test/setup.js';
 import { shallowMount } from '@vue/test-utils';
 import MenuList from '@/components/layout/left-bar/menu-list.vue';
 

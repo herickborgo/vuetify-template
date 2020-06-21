@@ -1,4 +1,4 @@
-import '@test/index.js';
+import '@test/setup.js';
 import { shallowMount } from '@vue/test-utils';
 import AppBar from '@/components/layout/app-bar.vue';
 

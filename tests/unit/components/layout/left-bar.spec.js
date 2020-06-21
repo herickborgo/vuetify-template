@@ -1,4 +1,4 @@
-import '@test/index.js';
+import '@test/setup.js';
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import VueRouter from 'vue-router';
 import LeftBar from '@/components/layout/left-bar.vue';

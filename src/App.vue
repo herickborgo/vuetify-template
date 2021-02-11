@@ -2,7 +2,7 @@
   <v-app>
     <app-bar @update:drawer="drawer = !drawer"></app-bar>
     <left-bar v-model="drawer"></left-bar>
-    <v-content>
+    <v-content class="ma-5">
       <router-view />
     </v-content>
   </v-app>

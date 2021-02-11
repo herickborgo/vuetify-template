@@ -9,6 +9,7 @@
           v-if="route.children"
           active-class="secondary"
           class="pt-1"
+          exact
         >
           <template v-slot:activator class="pa-0 ma-0">
             <v-list-item-icon>
@@ -24,6 +25,7 @@
           link
           :to="{ name: route.name }"
           active-class="secondary"
+          exact
         >
           <v-list-item-icon>
             <v-icon>{{ route.icon }}</v-icon>

@@ -15,6 +15,17 @@ const routes = [
       },
     },
   },
+  {
+    path: '/components',
+    name: 'Components',
+    component: () => import('@/views/Components.vue'),
+    meta: {
+      leftBar: {
+        title: 'Componentes',
+        icon: 'dashboard',
+      },
+    },
+  },
 ];
 
 const router = new VueRouter({
